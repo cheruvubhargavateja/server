@@ -10,7 +10,7 @@ dotenv.config();
 const app = express();
 
 const corsOptions = {
-  origin: 'http://localhost:5173', // The specific origin you want to allow
+  origin: 'https://bhargavateja-tour-app.netlify.app', // The specific origin you want to allow
   credentials: true, // Allow credentials (cookies, authorization headers, etc.)
 };
 
