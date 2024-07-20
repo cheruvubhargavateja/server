@@ -72,7 +72,10 @@ export async function login(req, res) {
       });
     }
 
-    const decryptedPassword = await verifyPassword(req.body.password, loggedIn.password);
+    const decryptedPassword = await verifyPassword(
+      req.body.password,
+      loggedIn.password
+    );
 
     if (decryptedPassword) {
       const data = {
@@ -83,7 +86,12 @@ export async function login(req, res) {
       };
       const token = generateToken(data);
 
-      res.cookie("token", token, { maxAge: 3600000, httpOnly: true });
+      res.cookie("token", token, {
+        maxAge: 3600000,
+        httpOnly: true,
+        secure: true,
+        sameSite: "strict",
+      });
 
       return res
         .status(200)
