@@ -90,7 +90,6 @@ export async function login(req, res) {
         maxAge: 3600000,
         httpOnly: true,
         secure: true,
-        sameSite: "strict",
       });
 
       return res
