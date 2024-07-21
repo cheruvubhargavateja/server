@@ -91,7 +91,7 @@ export async function login(req, res) {
         httpOnly: true,
         secure: true,
         sameSite: "None",
-        domain: "bhargavateja-tour-app.netlify.app",
+        // domain: "bhargavateja-tour-app.netlify.app",
         path: "/",
       });
 
